@@ -1,57 +1,131 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contoh Halaman — GitHub Pages</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kage — Jalan Menuju Kuil</title>
+<meta name="description" content="Sebuah perjalanan digital menyusuri jalan setapak menuju kuil gunung Kage, disaksikan di bawah bayang cahaya lentera." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="hero-eyebrow">Kupang, NTT</p>
-      <h1 class="hero-title">Halaman contoh<br>untuk GitHub Pages</h1>
-      <p class="hero-sub">Ganti isi file ini dengan kontenmu sendiri — profil, portofolio, dokumentasi proyek, atau apa saja. File ini hanya untuk menunjukkan bagaimana HTML, CSS, dan JS bekerja sama saat di-hosting di GitHub Pages.</p>
-      <a class="hero-cta" href="#panduan">Lihat cara kerjanya</a>
-    </div>
+  <canvas id="scene"></canvas>
+
+  <header class="topbar">
+    <span class="mark">影 Kage</span>
+    <nav>
+      <a href="#jalan">Jalan Setapak</a>
+      <a href="#malam">Malam Kuil</a>
+      <a href="#singgah">Singgah</a>
+    </nav>
   </header>
 
   <main>
-    <section class="panel" id="panduan">
-      <h2>Tiga file, satu situs</h2>
-      <div class="grid">
-        <article class="card">
-          <span class="card-tag">HTML</span>
-          <h3>index.html</h3>
-          <p>Berisi struktur & isi halaman. GitHub Pages selalu mencari file ini sebagai halaman pembuka.</p>
-        </article>
-        <article class="card">
-          <span class="card-tag">CSS</span>
-          <h3>style.css</h3>
-          <p>Mengatur tampilan: warna, jarak, tipografi, dan tata letak seperti yang kamu lihat di halaman ini.</p>
-        </article>
-        <article class="card">
-          <span class="card-tag">JS</span>
-          <h3>script.js</h3>
-          <p>Menambahkan interaksi kecil — coba klik tombol penghitung di bawah.</p>
-        </article>
+
+    <section class="hero">
+      <p class="hero-kicker">gunung Kage, ketinggian 1140m</p>
+      <h1>Setiap langkah<br>menuju cahaya<br>melewati bayangan.</h1>
+      <p class="hero-sub">Kuil kayu tua ini telah berdiri sejak tiga abad lampau, disangga oleh pohon-pohon cemara yang lebih tua darinya. Gulir ke bawah untuk menyusuri jalannya — dari kaki bukit hingga gerbang terakhir.</p>
+      <div class="hero-scroll-cue">
+        <span></span>
+        gulir
       </div>
     </section>
 
-    <section class="panel counter-panel">
-      <h2>Coba interaksinya</h2>
-      <p>Tombol ini dikendalikan oleh <code>script.js</code> — bukti bahwa JavaScript berjalan di situs yang kamu hosting.</p>
-      <div class="counter">
-        <button id="counterBtn" class="counter-btn">Sudah diklik <span id="counterNum">0</span> kali</button>
+    <section id="jalan" class="path">
+      <h2>Jalan setapak</h2>
+      <p class="section-intro">Empat titik singgah membentuk rute tradisional peziarah, masing-masing menandai perubahan ketinggian dan suasana hutan.</p>
+
+      <ol class="path-list">
+        <li class="path-item">
+          <span class="path-num">01</span>
+          <div class="path-body">
+            <h3>Gerbang Kaki Bukit</h3>
+            <p>Torii pertama berdiri sendirian di antara ladang, tempat peziarah menundukkan kepala sebelum mendaki. Cat merahnya sudah pudar menjadi warna tanah.</p>
+          </div>
+          <svg class="path-art" viewBox="0 0 120 120" aria-hidden="true">
+            <path d="M20 100 L20 30 M100 100 L100 30 M10 30 L110 30 M15 42 L105 42" />
+          </svg>
+        </li>
+
+        <li class="path-item">
+          <span class="path-num">02</span>
+          <div class="path-body">
+            <h3>Hutan Cemara Seribu</h3>
+            <p>Jalan menyempit di antara batang-batang cemara yang menua. Cahaya jatuh dalam potongan tipis, dan suara langkah menjadi satu-satunya penanda waktu.</p>
+          </div>
+          <svg class="path-art" viewBox="0 0 120 120" aria-hidden="true">
+            <path d="M25 110 L25 20 M50 110 L50 10 M75 110 L75 25 M100 110 L100 15" />
+          </svg>
+        </li>
+
+        <li class="path-item">
+          <span class="path-num">03</span>
+          <div class="path-body">
+            <h3>Kolam Cermin Bulan</h3>
+            <p>Sebuah kolam kecil memantulkan langit persis di titik tertentu setiap purnama. Para peziarah lama percaya kolam ini menyimpan wajah leluhur mereka.</p>
+          </div>
+          <svg class="path-art" viewBox="0 0 120 120" aria-hidden="true">
+            <ellipse cx="60" cy="80" rx="45" ry="14" />
+            <circle cx="60" cy="35" r="14" />
+          </svg>
+        </li>
+
+        <li class="path-item">
+          <span class="path-num">04</span>
+          <div class="path-body">
+            <h3>Gerbang Terakhir</h3>
+            <p>Anak tangga batu terakhir membuka ke halaman kuil. Di sinilah lentera-lentera dinyalakan setiap senja, menandai bahwa jalan telah selesai ditempuh.</p>
+          </div>
+          <svg class="path-art" viewBox="0 0 120 120" aria-hidden="true">
+            <path d="M15 105 L30 20 M105 105 L90 20 M22 62 L98 62" />
+          </svg>
+        </li>
+      </ol>
+    </section>
+
+    <section id="malam" class="night">
+      <div class="night-copy">
+        <h2>Setelah matahari turun</h2>
+        <p>Lentera batu di sepanjang halaman dinyalakan satu demi satu oleh penjaga kuil, sebuah ritual yang tidak pernah tercatat namun tidak pernah terlewat. Kunang-kunang datang dari kolam di bulan-bulan hangat, seolah ikut menjaga cahaya tetap menyala hingga pagi.</p>
+        <p>Model tiga dimensi di atas halaman ini menggambarkan gerbang kuil pada jam-jam tersebut — statis di siang, namun hidup begitu kegelapan tiba.</p>
       </div>
     </section>
+
+    <section id="singgah" class="visit">
+      <h2>Singgah</h2>
+      <div class="visit-grid">
+        <div class="visit-card">
+          <h3>Jam kunjungan</h3>
+          <p>05.30 – 18.00, sepanjang tahun. Halaman utama tetap terbuka setelah gelap bagi peziarah yang menempuh jalan malam.</p>
+        </div>
+        <div class="visit-card">
+          <h3>Waktu terbaik</h3>
+          <p>Akhir musim semi, saat kabut pagi masih menggantung di antara cemara dan kolam belum ramai oleh pengunjung siang.</p>
+        </div>
+        <div class="visit-card">
+          <h3>Etika berkunjung</h3>
+          <p>Berjalan di sisi jalan, bukan di tengah — bagian tengah disediakan untuk yang dihormati, bukan yang lewat.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>影 Kage — sebuah kuil rekaan, disusun sebagai latihan desain web.</p>
+    </footer>
+
   </main>
 
-  <footer class="site-footer">
-    <p>Dibuat sebagai contoh belajar GitHub Pages.</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+<script type="module" src="main.js"></script>
 </body>
 </html>
